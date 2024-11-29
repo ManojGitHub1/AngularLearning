@@ -1,0 +1,8 @@
+<app-checking [message] = "messageFromCrewMembers" [userToken]="token"
+(messageChecking)="receivingMessage($event)"></app-checking>
+
+<p>{{receivedMes}}</p>
+<p>{{titleFromApp}}</p>
+<button (click) = "sendMessageCrewMember();">Send Message from Crew Members</button>
+<p>crew-members works!</p>
+

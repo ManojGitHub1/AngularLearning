@@ -1,0 +1,22 @@
+<h1> Two way Data Binding </h1>
+
+<input [(ngModel)]="name" placeholder="Enter name">
+<p> Hello, {{name}}</p>
+
+<input type="checkbox" [(ngModel)]="isChecked">
+<p> Is checked: {{isChecked}}</p>
+
+<input type="radio" [(ngModel)]="selectedOption" [value]="'Option 1'"> Option 1
+<input type="radio" [(ngModel)]="selectedOption" [value]="'Option 2'"> Option 2
+<p>selected radio : {{selectedOption}}</p>
+
+<select [(ngModel)]="dropDownOption">
+    <option [ngValue]="'Option1'">Option 1</option>
+    <option [ngValue]="'Option2'">Option 2</option>
+
+</select>
+<p>DropDownOption is {{dropDownOption}}</p>
+
+<textarea [(ngModel)]="textAreaValue" placeholder="Enter details"></textarea>
+<p> Text Area Value is {{textAreaValue}}</p>
+

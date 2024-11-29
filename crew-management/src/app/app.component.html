@@ -1,0 +1,53 @@
+<p>{{title}}</p>
+
+<app-crew-members [titleFromApp]="title" (messageFromCrewMembersOutput)="receivedCrew($event)"></app-crew-members>
+<p>{{receivedMessageCrewMembers}}</p>
+<!-- <route-outlet></route-outlet> -->
+
+<div *ngIf="a > b">
+  A is greater
+</div>
+
+<div *ngIf="a < b">
+  B is greater
+</div>
+@if (a>b) {
+  {{a}} is greater than {{b}}
+} @else {
+  {{b}} is greater than {{a}}
+}
+
+<!-- <div *ngFor="let item in items">  
+  {{item}}
+</div> -->
+@for (item of items; track item) {
+  <div> {{item}}</div>
+}
+
+@switch (userRole) {
+  @case ("admin") {
+    <p>user is admin</p>
+  }
+  @case ("manager") {
+    <p>user is manager</p>
+  }
+}
+
+<div [ngClass]="{'active': isActive, 'inactive': !isActive}">
+This show/hide button
+</div>
+<button (click)="toogleActive()">Toggle Active</button>
+
+
+<div [ngStyle]="{'height': '140px', 'background-color': backgroundColor, 'font-size.px': fontSize}">
+update color and font size
+</div>
+<button (click)="toggleSytle()">Style update</button>
+
+
+<input [(ngModel)]="name" placeholder="enter name" />
+<p>Hello {{name}}</p>
+
+<p highlitedColor="red">This is custom directive</p>
+
+<router-outlet/>

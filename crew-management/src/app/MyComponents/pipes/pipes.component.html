@@ -1,0 +1,74 @@
+
+<!-- Built-in Pipes -->
+<h1>Built-in Pipes</h1>
+<h2>DatePipe Example</h2>
+<p>{{ today | date }}</p>
+<p>{{ today | date: 'shortDate' }}</p>
+<p>{{ today | date: 'ddmmyyyy' }}</p>
+
+<h2>UpperCasePipe Example</h2>
+<p>{{ text | uppercase }}</p>
+<p>{{ text | lowercase }}</p>
+
+<h2>CurrencyPipe Example</h2>
+<p>Price: {{ amount | currency }}</p>
+<p>Price: {{ amount | currency: 'JPY' }}</p>
+<p>Price: {{ amount | currency: 'INR' }}</p>
+
+<h2>DecimalPipe Example</h2>
+<p>{{ percentVal | number: '1.2-2'}}</p>
+
+<h2>PercentagePipe Example</h2>
+<p>{{ percentVal | percent }}</p>
+<p>{{ percentVal | percent: '1.2-2' }}</p>
+
+<h2>JSONPipe Example</h2>
+<p>{{ jsonVal | json }}</p>
+
+<h2>SlicePipe Example</h2>
+<p>First 2 characters: {{ myArray | slice: 0:2 }}</p>
+
+<h2>KeyValuePipes Example</h2>
+<ul>
+    @for (item of myObject | keyvalue; track item) {
+        <li>{{ item.key }}: {{ item.value }}</li>
+    }@empty {
+        <li>
+            No items found.
+        </li>
+    }
+    <!-- <li @for="let item of myObject | keyvalue">
+        {{ items.key }}: {{ items.value }} <br>
+    </li> -->
+</ul>
+<br>
+
+<h1>Custom Pipes</h1>
+<p>
+    <!-- name capitalize is inside @Pipe in capitalize.pipe.ts -->
+    <!-- {{ "hello world manoj " | capitalize }} -->
+</p>
+<p>
+    <!-- @for (item of fileSizes; track item) {
+        <li>{{ item | fileSize }}</li>
+    } -->
+</p>
+
+<h1>Impure Pipe</h1>
+<div>
+    <label>Enter username</label>
+    <input type="text" id="search" ([ngModel])="searchTerm">
+</div>
+<p>
+    <!-- @for (item of users | fileSizes: searchTerm; track item) {
+        <li>{{ item }}</li>
+    } -->
+    <li *ngFor="let user of users | fileSize: searchTerm">
+        {{ user }}
+    </li>
+</p>
+
+
+<h1>Parameterized Router</h1>
+<p>Displaying number from url {{ id }}</p>
+
